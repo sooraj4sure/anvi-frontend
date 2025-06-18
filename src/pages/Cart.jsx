@@ -72,7 +72,7 @@ useEffect(()=>{
         <div className='w-full sm:w-[450px]'>
           <CartTotal/>
           <div className='w-full text-end'>
-            <button onClick={()=>navigate('/place-order')} className='bg-emerald-500 text-black font-semibold my-8 px-8 py-3 rounded-md w-full' >CHECKOUT</button>
+            <button onClick={()=>navigate('/place-order')} className='bg-[#e9718b] hover:bg-[#de426e] text-white font-semibold my-8 px-8 py-3 rounded-md w-full' >CHECKOUT</button>
  
           </div>
 

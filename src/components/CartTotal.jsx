@@ -42,7 +42,7 @@ let handleGift = (e) => {
             <hr />
 
             <div className='flex justify-between'>
-                <b>  <span className='text-red-400'>Pan India Free Shipping for orders above Rs. {freeDeliveryValue }</span> </b>
+                <b>  <span className='text-red-400'>Pan India Free Shipping on orders above Rs. {freeDeliveryValue }</span> </b>
                
 
             </div>
@@ -50,7 +50,7 @@ let handleGift = (e) => {
 {/*  ---------------------------- GIFT WRAP ------------------ */}
 
             <div className='flex justify-between'>
-                <b> <input onChange={handleGift} type="checkbox" /> Add <span className='text-pink-500'>Gift Wrap</span> with this item +50 </b>
+                <b> <input onChange={handleGift} type="checkbox" /> Make it Special ! 🎁 <span className='text-pink-500'>Gift Wrap</span> it for Only {currency}50 </b>
                
 
             </div>

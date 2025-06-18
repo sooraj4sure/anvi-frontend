@@ -38,7 +38,7 @@ import RelatedProduct from '../components/RelatedProduct'
 
      <div className='border-t-2 pt-10 transition-opacity ease-in duration-500 opacity-100'>
       {/* Product data */}
-      <div className='flex gap-12 sm:gap-12 flex-col sm:flex-row '>
+      <div className='flex gap-12 sm:gap-12 flex-col sm:flex-row'>
         {/* Product images */}
         <div className=' flex-1 flex flex-col-reverse gap-3 sm:flex-row '>
           <div className='flex sm:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[18.7%] w-full  '>
@@ -86,7 +86,7 @@ import RelatedProduct from '../components/RelatedProduct'
 
             </div>
 
-            <button onClick={()=> addToCart(productData._id , size)} className='bg-black text-white px-8 py-3 active:bg-gray-700' >ADD TO CART</button>
+            <button onClick={()=> addToCart(productData._id , size)} className='bg-[#e9718b] hover:bg-[#de426e] rounded-lg text-white font-semibold px-8 py-3' >ADD TO CART</button>
             <hr className='mt-8 sm:w-4/5'/>
             <div className='text-sm text-gray-500 mt-5 flex flex-col gap-1 '>
               <p>100% Orignal Product.</p>
