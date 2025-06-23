@@ -4,16 +4,16 @@ import Title from './Title'
 
 const CartTotal = () => {
 let freeDeliveryValue = 399;
-let giftWrapPrice = 50;
+
 let [giftWrap , setGiftWrap] = useState(0)
 
     const {currency ,  getCartAmount} = useContext(ShopContext)
-    let {delivery_fee } = useContext(ShopContext)
+    let {delivery_fee , giftWrapPrice} = useContext(ShopContext)
 
 
 let handleGift = (e) => {
   if (e.target.checked) {
-    setGiftWrap(50); // Add 50 
+    setGiftWrap(giftWrapPrice); 
   } else {
     setGiftWrap(0); // Reset
   }

@@ -16,7 +16,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 const App = () => {
   return (
-    <div className='px-4 sm:px-[2vw] md:px-[3vw] lg:px-[5vw] '>
+    <div className='px-1 sm:px-[1vw] md:px-[2vw] lg:px-[2vw] '>
       <ToastContainer/>
       <Navbar />
       <SearchBar/>
