@@ -57,8 +57,7 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            Discover our exquisite collection of handcrafted jewelry, where
-            luxury meets artistry.
+            Adorn yourself with our luxurious yet affordable jewelry pieces, crafted for elegance and brilliance.
           </motion.p>
 
           <motion.div
