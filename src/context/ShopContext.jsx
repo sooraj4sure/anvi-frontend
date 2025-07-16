@@ -28,81 +28,29 @@ const ShopContextProvider = ({ children }) => {
 
   const navigate = useNavigate();
 
-
-
-
-
-
-  // Fetch products with caching and retry logic ----------------------------
-  // const getProductsData = useCallback(async () => {
-  //   try {
-  //     setIsLoading(true);
-  //     setError(null);
+  // Fetch products with caching and retry logic
+  const getProductsData = useCallback(async () => {
+    try {
+      setIsLoading(true);
+      setError(null);
       
-  //     const response = await axios.get(`${backendUrl}/api/product/list`, {
-  //       timeout: 5000 // 5 second timeout
-  //     });
+      const response = await axios.get(`${backendUrl}/api/product/list`, {
+        timeout: 5000 // 5 second timeout
+      });
 
-  //     if (response.data?.success) {
-  //       setProducts(response.data.products || []);
-  //     } else {
-  //       throw new Error(response.data?.message || "Invalid response format");
-  //     }
-  //   } catch (err) {
-  //     console.error("Failed to fetch products:", err);
-  //     setError(err.message);
-  //     toast.error("Failed to load products. Please try again later.");
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // }, [backendUrl]);
-
-
-
-const getProductsData = useCallback(async () => {
-  try {
-    setIsLoading(true);
-    setError(null);
-    
-    // Retry logic (3 attempts)
-    let attempts = 0;
-    const maxAttempts = 3;
-    
-    while (attempts < maxAttempts) {
-      try {
-        const response = await axios.get(`${backendUrl}/api/product/list`, {
-          timeout: 8000 // Increased timeout
-        });
-
-        if (response.data?.success) {
-          setProducts(response.data.products || []);
-          return; // Success - exit the function
-        } else {
-          throw new Error(response.data?.message || "Invalid response format");
-        }
-      } catch (err) {
-        attempts++;
-        if (attempts >= maxAttempts) throw err;
-        await new Promise(resolve => setTimeout(resolve, 1000 * attempts)); // Exponential backoff
+      if (response.data?.success) {
+        setProducts(response.data.products || []);
+      } else {
+        throw new Error(response.data?.message || "Invalid response format");
       }
+    } catch (err) {
+      console.error("Failed to fetch products:", err);
+      setError(err.message);
+      toast.error("Failed to load products. Please try again later.");
+    } finally {
+      setIsLoading(false);
     }
-  } catch (err) {
-    console.error("Failed to fetch products after retries:", err);
-    setError(err.message);
-    toast.error("Failed to load products. Please try again later.");
-    // Consider setting cached products if available
-  } finally {
-    setIsLoading(false);
-  }
-}, [backendUrl]);
-
-  
-
-
-
-
-
-
+  }, [backendUrl]);
 
   // cart update through database
   const getUserCart = async (userToken) => {
