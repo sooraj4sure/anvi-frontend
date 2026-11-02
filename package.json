@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "axios": "^1.7.0",
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^2.2.0",
+    "framer-motion": "^11.11.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.6.0",
+    "next": "^15.0.0",
+    "razorpay": "^2.9.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-loading-skeleton": "^3.4.0",
+    "react-toastify": "^10.0.5",
+    "stripe": "^16.8.0",
+    "validator": "^13.12.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14"
+  },
+  "name": "anvi-nextjs",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start"
+  },
+  "version": "1.0.0"
+}
